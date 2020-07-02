@@ -75,20 +75,13 @@ var levelOrderBottom = function (root) {
 };
 
 function traverseTree(root, level, result) {
-  if (root === null) {
+  if (!root) {
     return;
   }
-
-  let levelElement = result[level];
-  if (!levelElement) {
-    levelElement = [];
-    result[level] = levelElement;
+  if (!result[level]) {
+    result[level] = [];
   }
-  levelElement.push(root.val);
-  if (root.left) {
-    traverseTree(root.left, level + 1, result);
-  }
-  if (root.right) {
-    traverseTree(root.right, level + 1, result);
-  }
+  result[level].push(root.val);
+  traverseTree(root.left, level + 1, result);
+  traverseTree(root.right, level + 1, result);
 }
