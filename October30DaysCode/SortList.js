@@ -18,7 +18,6 @@ var sortList = function (head) {
   }
 
   arr = arr.sort((a, b) => a - b);
-  // console.log(arr)
   node = head;
   var i = 0;
   while (node) {
