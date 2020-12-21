@@ -22,3 +22,4 @@ var validMountainArray = function (arr) {
   }
   return false;
 };
+  
